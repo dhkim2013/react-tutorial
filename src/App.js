@@ -9,8 +9,8 @@ class App extends React.Component {
         this.state = {
             value: {
                 1 : 'http://jpgwall.com/files/attach/images/146/654/006/6a46ce6f58e67000a2e8eeb792ada450.jpg',
-                2 : 'http://img.tenasia.hankyung.com/webwp_kr/wp-content/uploads/2014/03/2014030510463316367-540x811.jpg',
-                3 : 'http://cfile21.uf.tistory.com/image/22495D495713B3243B3645'
+                2 : 'http://i.imgur.com/jZAULzg.jpg',
+                3 : 'http://pds.joins.com/news/component/htmlphoto_mmdata/201604/18/htm_2016041873048527468.jpg'
             },
             cnt: 1,
             like: 0
@@ -37,12 +37,17 @@ class App extends React.Component {
     }
 
     render(){
+        let solid = {
+            border: 'solid',
+            padding: 0
+        };
         return  (
             <div>
-                <img src={this.state.value[this.state.cnt]} width="500" height="500"></img>
+                <img src={this.state.value[this.state.cnt]} width="300px" height="300px"></img>
                 <br />
-                <button onClick={this._incLike}>좋아요</button>
-                <a> 좋아요 {this.state.like}개</a>
+                <span>좋아요 {this.state.like}개</span>
+                <div style={this.solid}></div>
+                <input type="button" onClick={this._incLike} value="좋아요"/>
             </div>
         );
     }

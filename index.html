@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 
     <head>
-        <meta charset = "UTF-8">
+        <meta charset="UTF-8">
         <title>React App</title>
         <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/nav.css" />
    </head>
 
    <body>
-        <div id = "app"></div>
-        <input id="comment" type="text" placeholder="댓글을 입력해주세요."></input>
-        <button id="button">확인</button>
-        <br />
-        <div id="content"></div>
-        <script type="text/javascript">
-            $('#button').click(function() {
-                if($('#comment').val()){
-                    $('#content').prepend('<p>' + $('#comment').val() + '</p>');
-                    $('#comment').val('');
-                }
-            });
-            $('#comment').keypress(function(e){
-                if(e.keyCode == 13){
-                    if($('#comment').val()){
-                        $('#content').prepend('<p>' + $('#comment').val() + '</p>');
-                        $('#comment').val('');
-                    }
-                }
-            });
-        </script>
+        <div class="header">
+            <span>Community</span>
+        </div>
+
+        <div class="body">
+            <div class="box">
+                <div id="app"></div>
+                <input id="comment" type="text" placeholder="댓글을 입력하세요..."></input>
+                <button id="button">확인</button>
+            </div>
+            <br />
+            <div id="content"></div>
+        </div>
+
+        <div class="footer">
+
+        </div>
+
         <script src = "app.js"></script>
+        <script src="../js/comment.js"></script>
     </body>
 </html>
